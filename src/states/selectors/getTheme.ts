@@ -2,7 +2,7 @@ import { selector } from "recoil";
 import { mode } from "states/atoms/mode";
 import { whiteTheme, blackTheme } from "constants/themes";
 
-export const getArticles = selector({
+export const getTheme = selector({
   key: 'getTheme',
   get: ({get}) => {
     const value = get(mode);
