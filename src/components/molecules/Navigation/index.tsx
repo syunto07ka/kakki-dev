@@ -9,7 +9,6 @@ interface Props {
 export const Navigation: React.FC<Props> = () => (
   <Wrapper>
     <Nav to="/">Blog</Nav>
-    <Nav to="/profile">Profile</Nav>
   </Wrapper>
 );
 

@@ -1,6 +1,10 @@
+import * as React from 'react';
+
 export type Article = {
   id: number;
   title: string;
+  date: string;
+  description: React.FC;
 }
 
 export type Mode = 'white' | 'black';

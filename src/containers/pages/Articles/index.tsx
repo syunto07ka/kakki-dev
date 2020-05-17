@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { getArticles } from 'states/selectors/getArticles';
 import { getTheme } from 'states/selectors/getTheme';
 import { Article, Theme } from "model";
+import { ArticlesRow } from 'components/molecules/ArticlesRow';
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
 
@@ -15,10 +16,7 @@ export const Articles: React.FC = () => {
       <MainTemplate>
         <Header theme={theme}/>
         {articles.map((article: Article) => (
-          <div key={String(article.id)}>
-            <div>{article.id}</div>
-            <div>{article.title}</div>
-          </div>
+          <ArticlesRow article={article} key={String(article.id)} />
         ))}
       </MainTemplate>
     </React.Fragment>

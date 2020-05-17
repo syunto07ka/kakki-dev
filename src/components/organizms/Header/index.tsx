@@ -15,7 +15,7 @@ export const Header: React.FC<Props> = () => (
 );
 
 const Wrapper = styled.div`
-  margin: 32px 0;
+  margin-top: 32px;
 `;
 
 const Title = styled.div(props => `
