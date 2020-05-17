@@ -1,16 +1,10 @@
 import * as React from 'react';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { articles as articlesAtom } from 'states/atoms/articles';
+import { useRecoilValue } from 'recoil';
 import { getArticles } from 'states/selectors/getArticles';
 import { Article } from "model";
 
 export const List: React.FC = () => {
-  const setArticles = useSetRecoilState(articlesAtom);
-  const articles: any = useRecoilValue(getArticles);
-
-  React.useEffect(() => {
-    setArticles([]);
-  });
+  const articles = useRecoilValue<Article[]>(getArticles);
 
   return (
     <div>
