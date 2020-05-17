@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 import { Mode } from "model";
 
-export const articles = atom<Mode>({
+export const mode = atom<Mode>({
   key: 'mode',
   default: 'white',
 });
