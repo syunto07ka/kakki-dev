@@ -34,13 +34,13 @@ declare module "recoil" {
     ): void;
   });
 
-  export function useRecoilValue<T>(atom: RecoilState<T>): T;
-
   export function useRecoilState<T>(
     atom: RecoilState<T>
   ): [T, (action: React.SetStateAction<T>) => void];
 
+  export function useRecoilValue<T>(atom: RecoilState<T>): T;
+
   export function useSetRecoilState<T>(
     atom: RecoilState<T>
-  ): any; // FIXME: 甘えた。許して。
+  ): (action: React.SetStateAction<T>) => void;
 }
