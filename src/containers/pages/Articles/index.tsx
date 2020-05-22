@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { useRecoilValue } from 'recoil';
-import { getArticles } from 'states/selectors/getArticles';
-import { getTheme } from 'states/selectors/getTheme';
 import { Article, Theme } from "model";
 import { ArticlesRow } from 'components/molecules/ArticlesRow';
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
+import { articles } from 'repositories/articles';
+import { whiteTheme } from '../../../constants/themes';
 
 export const Articles: React.FC = () => {
-  const articles = useRecoilValue<Article[]>(getArticles);
-  const theme = useRecoilValue<Theme>(getTheme);
+  // FIXME: cannot build when use Recoil
+  // const articles = useRecoilValue<Article[]>(getArticles);
+  // const theme = useRecoilValue<Theme>(getTheme);
+  const theme: Theme = whiteTheme;
 
   return (
     <React.Fragment>
