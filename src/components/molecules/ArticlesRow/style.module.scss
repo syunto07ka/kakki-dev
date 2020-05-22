@@ -1,0 +1,36 @@
+.wrapper {
+  padding: 24px 16px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+}
+
+.content-wrapper {
+  margin-top: 24px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  margin-left: 16px;
+  border: 2px solid #f06060;
+}
+
+.name {
+  margin-left: 8px;
+  color: #333333;
+}
+
+.date {
+  margin-top: 8px;
+}
