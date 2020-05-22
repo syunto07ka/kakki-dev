@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { useRecoilValue } from 'recoil';
-import { getTheme } from 'states/selectors/getTheme';
 import { Article, Theme } from "model";
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
-import { getArticle } from 'states/selectors/getArticle';
 import styled from 'styled-components';
 import IconImage from 'images/profile.jpg';
 import { Link } from 'react-router-dom';
+import { articles } from 'repositories/articles';
+import { whiteTheme } from 'constants/themes';
 
 export const ArticlePage: React.FC = () => {
-  const article = useRecoilValue<Article>(getArticle);
-  const theme = useRecoilValue<Theme>(getTheme);
+  // FIXME: cannot build when use Recoil
+  // const article = useRecoilValue<Article>(getArticle);
+  // const theme = useRecoilValue<Theme>(getTheme);
+  const article: Article = articles[0];
+  const theme: Theme = whiteTheme;
   const Description: React.FC = article.description;
 
   return (
@@ -24,7 +26,7 @@ export const ArticlePage: React.FC = () => {
             <Description />
           </DescriptionWrapper>
           <Content>
-            author: <Icon src={IconImage}/><Name>カッキー(@kakki09)</Name>
+            author: <Icon key="article-page" src={IconImage}/><Name>カッキー(@kakki09)</Name>
           </Content>
           <Date>created: {article.date}</Date>
           <BackLink to="/">ブログ一覧に戻る</BackLink>

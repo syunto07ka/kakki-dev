@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { useRecoilValue } from 'recoil';
-import { getTheme } from 'states/selectors/getTheme';
 import { Theme } from "model";
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
+import { whiteTheme } from '../../../constants/themes';
 
 export const Profile: React.FC = () => {
-  const theme = useRecoilValue<Theme>(getTheme);
+  // FIXME: cannot build when use Recoil
+  // const theme = useRecoilValue<Theme>(getTheme);
+  const theme: Theme = whiteTheme;
 
   return (
     <React.Fragment>
