@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 24px 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -13,11 +13,22 @@
   margin-top: 24px;
 }
 
-.content {
-  display: flex;
-  align-items: center;
+.icon-name {
+  &::before {
+    content: "author:";
+    display: inline-block;
+    width: 64px;
+    margin-right: 8px;
+  }
 }
 
 .date {
   margin-top: 8px;
+
+  &::before {
+    content: "created:";
+    display: inline-block;
+    width: 64px;
+    margin-right: 8px;
+  }
 }

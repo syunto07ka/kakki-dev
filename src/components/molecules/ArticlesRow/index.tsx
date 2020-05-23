@@ -12,10 +12,8 @@ export const ArticlesRow: React.FC<Props> = ({ article }) => (
   <div styleName="wrapper">
     <Link styleName="title" to={`/articles/${article.id}`}>{article.id}. {article.title}</Link>
     <div styleName="content-wrapper">
-      <div styleName="content">
-        author: <IconName />
-      </div>
-      <div styleName="date">created: {article.date}</div>
+      <div styleName="icon-name"><IconName /></div>
+      <div styleName="date">{article.date}</div>
     </div>
   </div>
 );

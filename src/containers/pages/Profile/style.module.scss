@@ -1,0 +1,49 @@
+.profile-icon-wrapper {
+  text-align: center;
+}
+
+.lists-profile {
+  list-style: none;
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+.list-name {
+  margin-top: 8px;
+  &::before {
+    content: "名前:";
+    width: 80px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+}
+
+.list-birthday {
+  margin-top: 8px;
+  &::before {
+    content: "生年月日:";
+    width: 80px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+}
+
+.list-from {
+  margin-top: 8px;
+  &::before {
+    content: "出身:";
+    width: 80px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+}
+
+.list-job {
+  margin-top: 8px;
+  &::before {
+    content: "職業:";
+    width: 80px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+}

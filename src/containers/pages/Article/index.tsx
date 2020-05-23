@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { articles } from 'repositories/articles';
 import './style.module.scss';
 import { IconName } from 'components/atoms/IconName';
+import { ContentWrapper } from 'components/organizms/ContentWrapper';
+import { SectionWrapper } from 'components/organizms/SectionWrapper';
 
 interface Props {
   store: Store
@@ -24,17 +26,18 @@ export const ArticlePage: React.FC<Props> = ({ store }) => {
     <React.Fragment>
       <MainTemplate>
         <Header activeTab={store.activeTab} />
-        <div styleName="content-wrapper">
-          <div styleName="title">{article.id}. {article.title}</div>
-          <div styleName="description-wrapper">
-            <Description />
-          </div>
-          <div styleName="content">
-            author: <IconName />
-          </div>
-          <div styleName="date">created: {article.date}</div>
+        <ContentWrapper>
+          <SectionWrapper title={article.id + '. ' + article.title}>
+            <div styleName="description-wrapper">
+              <Description />
+            </div>
+            <div styleName="info-wrapper">
+              <div styleName="icon-name"><IconName /></div>
+              <div styleName="date">{article.date}</div>
+            </div>
+          </SectionWrapper>
           <Link styleName="back-link" to="/">ブログ一覧に戻る</Link>
-        </div>
+        </ContentWrapper>
       </MainTemplate>
     </React.Fragment>
   );
