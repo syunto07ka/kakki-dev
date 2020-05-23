@@ -1,5 +1,10 @@
 import * as React from 'react';
 
+export type Store = {
+  activeTab: ActiveTab;
+  setActiveTab: React.Dispatch<React.SetStateAction<ActiveTab>>;
+}
+
 export type Article = {
   id: number;
   title: string;
@@ -14,3 +19,5 @@ export type Theme = {
   base: '#333333' | '#fff',
   main: '#f06060'
 };
+
+export type ActiveTab = 'blog' | 'profile';

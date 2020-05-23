@@ -4,6 +4,6 @@ import './style.module.scss';
 
 export const IconName: React.FC = () => (
   <>
-    <img alt="カッキー" src={IconImage} styleName="icon" /><div styleName="name">カッキー(@kakki09)</div>
+    <img alt="カッキー" src={IconImage} styleName="icon" /><span styleName="name">カッキー(@kakki09)</span>
   </>
 );

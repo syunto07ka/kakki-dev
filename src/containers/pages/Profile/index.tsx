@@ -1,18 +1,23 @@
 import * as React from 'react';
-import { Theme } from "model";
+import { Store } from "model";
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
-import { whiteTheme } from '../../../constants/themes';
+import { IconName } from 'components/atoms/IconName';
 
-export const Profile: React.FC = () => {
+interface Props {
+  store: Store
+}
+
+export const Profile: React.FC<Props> = ({ store }) => {
   // FIXME: cannot build when use Recoil
   // const theme = useRecoilValue<Theme>(getTheme);
-  const theme: Theme = whiteTheme;
+  store.setActiveTab('profile');
 
   return (
     <React.Fragment>
       <MainTemplate>
-        <Header theme={theme}/>
+        <Header activeTab={store.activeTab} />
+        <div><IconName /></div>
       </MainTemplate>
     </React.Fragment>
   );
