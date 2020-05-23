@@ -1,12 +1,6 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import './style.module.scss';
 
 export const MainTemplate: React.FC = ({ children }) => (
-  <Template>{children}</Template>
+  <div styleName="template">{children}</div>
 );
-
-const Template = styled.div`
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-`;

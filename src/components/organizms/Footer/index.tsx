@@ -1,22 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import './style.module.scss';
 
 export const Footer: React.FC = () => (
-  <Wrapper>
-    <Text>@kakki-dev</Text>
-  </Wrapper>
+  <div styleName="wrapper">
+    <div styleName="text">@kakki-dev</div>
+  </div>
 );
-
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 720px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 0;
-  border-top: 1px solid #333333;
-  background-color: #fff;
-  margin-top: 32px;
-`;
-
-const Text = styled.div``;

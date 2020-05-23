@@ -1,26 +1,16 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { Theme } from 'model';
 import { Navigation } from 'components/molecules/Navigation';
+import { Link } from 'react-router-dom';
+import './style.module.scss';
+import { ActiveTab } from 'model';
 
 interface Props {
-  theme: Theme
+  activeTab: ActiveTab
 }
 
-export const Header: React.FC<Props> = () => (
-  <Wrapper>
-    <Title>kakki-dev</Title>
-    <Navigation isActive={true}/>
-  </Wrapper>
+export const Header: React.FC<Props> = ({ activeTab }) => (
+  <div styleName="wrapper">
+    <Link styleName="title" to="/">kakki-dev</Link>
+    <Navigation activeTab={activeTab}/>
+  </div>
 );
-
-const Wrapper = styled.div`
-  margin-top: 32px;
-`;
-
-const Title = styled.div(props => `
-  color: ${props.theme.base};
-  text-align: center;
-  font-size: 48px;
-  font-weight: bold;
-`);
