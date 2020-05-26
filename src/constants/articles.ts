@@ -1,11 +1,5 @@
 import { Article } from "model";
-import { Start } from "constants/descriptions/Start";
-
-export class ArticleRepository {
-  findAll() {
-    return articles
-  }
-}
+import { Start } from "constants/blogs/Start";
 
 export const articles: Article[] = [
   {
