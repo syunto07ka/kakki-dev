@@ -1,24 +1,16 @@
 .wrapper {
-  padding: 16px 0;
+  padding: 24px 0;
   border-bottom: 1px solid #d9d9d9;
 }
 
 .title {
   font-size: 20px;
   color: #333333;
+  border-color: #333333;
 }
 
 .content-wrapper {
   margin-top: 24px;
-}
-
-.icon-name {
-  &::before {
-    content: "author:";
-    display: inline-block;
-    width: 64px;
-    margin-right: 8px;
-  }
 }
 
 .date {
