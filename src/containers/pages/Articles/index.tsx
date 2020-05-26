@@ -3,7 +3,7 @@ import { Article, Store } from "model";
 import { ArticlesRow } from 'components/molecules/ArticlesRow';
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
-import { articles } from 'repositories/articles';
+import { articles } from 'constants/articles';
 import { ContentWrapper } from 'components/organizms/ContentWrapper';
 import { SectionWrapper } from 'components/organizms/SectionWrapper';
 
@@ -15,7 +15,9 @@ export const Articles: React.FC<Props> = ({ store }) => {
   // FIXME: cannot build when use Recoil
   // const articles = useRecoilValue<Article[]>(getArticles);
   // const theme = useRecoilValue<Theme>(getTheme);
-  store.setActiveTab('blog');
+  React.useEffect(() => {
+    store.setActiveTab('blog');
+  });
 
   return (
     <React.Fragment>
