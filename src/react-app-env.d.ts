@@ -64,3 +64,8 @@ declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+
+declare module '*.mdx' {
+  const MDXComponent: (props: any) => JSX.Element
+  export default MDXComponent
+}

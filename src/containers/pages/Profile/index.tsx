@@ -14,7 +14,9 @@ interface Props {
 export const Profile: React.FC<Props> = ({ store }) => {
   // FIXME: cannot build when use Recoil
   // const theme = useRecoilValue<Theme>(getTheme);
-  store.setActiveTab('profile');
+  React.useEffect(() => {
+    store.setActiveTab('profile');
+  });
 
   return (
     <React.Fragment>

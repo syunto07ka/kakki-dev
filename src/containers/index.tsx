@@ -32,7 +32,7 @@ const BaseRouter: React.FC<RootProps> = ({ store }) => (
       <Route exact={true} path="/">
         <Articles store={store} />
       </Route>
-      <Route path="/articles">
+      <Route exact={true} path="/articles/:articleId">
         <ArticlePage store={store} />
       </Route>
       <Route path="/profile">
