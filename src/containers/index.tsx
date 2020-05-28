@@ -4,39 +4,43 @@ import { Articles } from 'containers/pages/Articles';
 import { Profile } from 'containers/pages/Profile';
 import { ArticlePage } from 'containers/pages/Article';
 import { ActiveTab } from 'model';
+import { Provider } from 'react-redux';
+import { store } from 'redux/store/store';
 // import { Tab } from 'constants/tabs';
 
 export const Container: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<ActiveTab>('blog');
 
-  const store = {
+  const oldStore = {
     activeTab,
     setActiveTab
   }
 
   return (
-    <BaseRouter store={store} />
+    <Provider store={store}>
+      <BaseRouter oldStore={oldStore} />
+    </Provider>
   )
 };
 
 interface RootProps {
-  store: {
+  oldStore: {
     activeTab: ActiveTab,
     setActiveTab: React.Dispatch<React.SetStateAction<ActiveTab>>
   }
 }
 
-const BaseRouter: React.FC<RootProps> = ({ store }) => (
+const BaseRouter: React.FC<RootProps> = ({ oldStore }) => (
   <Router>
     <Switch>
       <Route exact={true} path="/">
-        <Articles store={store} />
+        <Articles store={oldStore} />
       </Route>
       <Route exact={true} path="/articles/:articleId">
-        <ArticlePage store={store} />
+        <ArticlePage store={oldStore} />
       </Route>
       <Route path="/profile">
-        <Profile store={store} />
+        <Profile store={oldStore} />
       </Route>
     </Switch>
   </Router>
