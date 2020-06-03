@@ -1,4 +1,4 @@
-import { onLoading, offLoading ,get } from "redux/actions/articles";
+import { onLoading, offLoading ,get } from "redux/slices/articles";
 import { Dispatch } from "@reduxjs/toolkit";
 
 export const fetch = () => (dispatch: Dispatch) => {
