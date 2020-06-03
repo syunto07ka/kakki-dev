@@ -3,44 +3,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Articles } from 'containers/pages/Articles';
 import { Profile } from 'containers/pages/Profile';
 import { ArticlePage } from 'containers/pages/Article';
-import { ActiveTab } from 'model';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store/store';
-// import { Tab } from 'constants/tabs';
+import { store } from 'redux/store';
 
-export const Container: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState<ActiveTab>('blog');
+export const Container: React.FC = () => (
+  <Provider store={store}>
+    <BaseRouter />
+  </Provider>
+);
 
-  const oldStore = {
-    activeTab,
-    setActiveTab
-  }
-
-  return (
-    <Provider store={store}>
-      <BaseRouter oldStore={oldStore} />
-    </Provider>
-  )
-};
-
-interface RootProps {
-  oldStore: {
-    activeTab: ActiveTab,
-    setActiveTab: React.Dispatch<React.SetStateAction<ActiveTab>>
-  }
-}
-
-const BaseRouter: React.FC<RootProps> = ({ oldStore }) => (
+const BaseRouter: React.FC = () => (
   <Router>
     <Switch>
       <Route exact={true} path="/">
-        <Articles store={oldStore} />
+        <Articles />
       </Route>
       <Route exact={true} path="/articles/:articleId">
-        <ArticlePage store={oldStore} />
+        <ArticlePage />
       </Route>
       <Route path="/profile">
-        <Profile store={oldStore} />
+        <Profile />
       </Route>
     </Switch>
   </Router>

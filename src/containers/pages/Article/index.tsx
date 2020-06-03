@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Article, Store } from "model";
+import { Article } from "model";
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
 import { Link, useParams, Redirect } from 'react-router-dom';
@@ -8,34 +8,37 @@ import './style.module.scss';
 import { IconName } from 'components/atoms/IconName';
 import { ContentWrapper } from 'components/organizms/ContentWrapper';
 import { ArticleWrapper } from 'components/organizms/ArticleWrapper';
+import { useDispatch, useSelector } from 'react-redux';
+import { rootState } from 'redux/store';
+import { changeTab } from 'redux/slices/activeTab';
 
-interface Props {
-  store: Store
-}
-
-export const ArticlePage: React.FC<Props> = ({ store }) => {
-  // FIXME: cannot build when use Recoil
-  // const article = useRecoilValue<Article>(getArticle);
-  // const theme = useRecoilValue<Theme>(getTheme);
-
-  // React.useEffect(() => {
-  //   store.setActiveTab('blog');
-  //   console.log('ああああ');
-  // });
-
+export const ArticlePage: React.FC = () => {
   const { articleId } = useParams();
-  const article: Article | undefined = articles.find(article => article.id === Number(articleId));
+  const dispatch = useDispatch();
+  const activeTab = useSelector((state: rootState) => state.activeTab.value);
+
+  React.useEffect(() => {
+    dispatch(changeTab('blog'));
+  }, [dispatch]);
+
+  const article = React.useMemo(() => {
+    const article: Article | undefined = articles.find(article => article.id === Number(articleId));
+    return article;
+  }, [articleId]);
+
   if (article === undefined) {
     return <Redirect to="/" />;
   }
+
+  const title = article.id + '. ' + article.title;
   const Description: React.FC = article.description;
 
   return (
     <React.Fragment>
       <MainTemplate>
-        <Header activeTab={store.activeTab} />
+        <Header activeTab={activeTab} />
         <ContentWrapper>
-          <ArticleWrapper title={article.id + '. ' + article.title}>
+          <ArticleWrapper title={title}>
             <div styleName="description-wrapper">
               <Description />
             </div>
