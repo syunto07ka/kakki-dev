@@ -18,3 +18,6 @@ export const articlesSlice = createSlice({
     }
   }
 });
+
+export const articlesReducer = articlesSlice.reducer;
+export const { onLoading, offLoading, get } = articlesSlice.actions;
