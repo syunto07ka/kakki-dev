@@ -1,27 +1,26 @@
 import * as React from 'react';
-import { Store } from "model";
 import { Header } from 'components/organizms/Header';
 import { MainTemplate } from 'components/templates/MainTemplate';
 import './style.module.scss';
 import { ContentWrapper } from 'components/organizms/ContentWrapper';
 import { SectionWrapper } from 'components/organizms/SectionWrapper';
 import { ProfileIcon } from 'components/atoms/ProfileIcon';
+import { useDispatch, useSelector } from 'react-redux';
+import { rootState } from 'redux/store';
+import { changeTab } from 'redux/slices/activeTab';
 
-interface Props {
-  store: Store
-}
+export const Profile: React.FC = () => {
+  const dispatch = useDispatch();
+  const activeTab = useSelector((state: rootState) => state.activeTab.value);
 
-export const Profile: React.FC<Props> = ({ store }) => {
-  // FIXME: cannot build when use Recoil
-  // const theme = useRecoilValue<Theme>(getTheme);
   React.useEffect(() => {
-    store.setActiveTab('profile');
-  });
+    dispatch(changeTab('profile'));
+  }, [dispatch]);
 
   return (
     <React.Fragment>
       <MainTemplate>
-        <Header activeTab={store.activeTab} />
+        <Header activeTab={activeTab} />
         <ContentWrapper>
           <SectionWrapper title="基本プロフィール">
             <div styleName="profile-icon-wrapper">
