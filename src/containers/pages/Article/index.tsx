@@ -11,6 +11,7 @@ import { ArticleWrapper } from 'components/organizms/ArticleWrapper';
 import { useDispatch, useSelector } from 'react-redux';
 import { rootState } from 'redux/store';
 import { changeTab } from 'redux/slices/activeTab';
+import { Footer } from 'components/organizms/Footer';
 
 export const ArticlePage: React.FC = () => {
   const { articleId } = useParams();
@@ -49,6 +50,7 @@ export const ArticlePage: React.FC = () => {
           </ArticleWrapper>
           <Link styleName="back-link" to="/">ブログ一覧に戻る</Link>
         </ContentWrapper>
+        <Footer />
       </MainTemplate>
     </React.Fragment>
   );

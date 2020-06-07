@@ -9,6 +9,7 @@ import { SectionWrapper } from 'components/organizms/SectionWrapper';
 import { useDispatch, useSelector } from 'react-redux';
 import { rootState } from 'redux/store';
 import { changeTab } from 'redux/slices/activeTab';
+import { Footer } from 'components/organizms/Footer';
 
 export const Articles: React.FC = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export const Articles: React.FC = () => {
             ))}
           </SectionWrapper>
         </ContentWrapper>
+        <Footer />
       </MainTemplate>
     </React.Fragment>
   );
