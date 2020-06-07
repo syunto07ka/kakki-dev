@@ -8,6 +8,7 @@ import { ProfileIcon } from 'components/atoms/ProfileIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { rootState } from 'redux/store';
 import { changeTab } from 'redux/slices/activeTab';
+import { Footer } from 'components/organizms/Footer';
 
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,14 @@ export const Profile: React.FC = () => {
               <li styleName="list-job">エンジニア</li>
             </ul>
           </SectionWrapper>
+          <SectionWrapper title="経歴">
+            <div>
+              ただいま準備中です。<br />
+              しばらくお待ち下さいmm
+            </div>
+          </SectionWrapper>
         </ContentWrapper>
+        <Footer />
       </MainTemplate>
     </React.Fragment>
   );
