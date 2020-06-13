@@ -1,13 +1,14 @@
-import { onLoading, offLoading ,get } from "redux/slices/articles";
+import { onLoading, offLoading, fetch } from "redux/slices/articles";
 import { Dispatch } from "@reduxjs/toolkit";
+import { articles } from "constants/articles";
 
-export const fetch = () => (dispatch: Dispatch) => {
+export const fetchArticles = () => (dispatch: Dispatch) => {
   dispatch(onLoading());
 
   (new Promise(resolve => {
     setTimeout(() => {
-      dispatch(get({data: []}));
+      dispatch(fetch({data: articles}));
       resolve();
-    }, 5000);
+    }, 300);
   })).then(() => dispatch(offLoading()));
 }

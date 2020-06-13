@@ -13,11 +13,11 @@ export const articlesSlice = createSlice({
     offLoading: state => {
       state.isLoading = false;
     },
-    get: (state, action) => {
+    fetch: (state, action) => {
       state.value = action.payload.data;
     }
   }
 });
 
 export const articlesReducer = articlesSlice.reducer;
-export const { onLoading, offLoading, get } = articlesSlice.actions;
+export const { onLoading, offLoading, fetch } = articlesSlice.actions;
