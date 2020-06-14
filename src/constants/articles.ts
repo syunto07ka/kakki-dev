@@ -3,8 +3,15 @@ import { Start } from "constants/blogs/Start";
 import AddImplementes from "constants/blogs/AddImplementes.mdx";
 import Moteamasu from "constants/blogs/Moteamasu.mdx";
 import Saddness from "constants/blogs/Sadness.mdx";
+import WhyAmICording from "constants/blogs/WhyAmICording.mdx";
 
 export const articles: Article[] = [
+  {
+    id: 5,
+    title: '"人に寄り添うコードを書く"',
+    date: '2020-06-14',
+    description: WhyAmICording,
+  },
   {
     id: 4,
     title: 'モテアマスから帰ってきて',
