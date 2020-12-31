@@ -23,3 +23,19 @@
     margin-right: 8px;
   }
 }
+
+.tags {
+  margin-top: 8px;
+
+  &::before {
+    content: "tag:";
+    display: inline-block;
+    width: 64px;
+    margin-right: 8px;
+  }
+}
+
+.tag {
+  margin-right: 8px;
+  display: inline-block;
+}

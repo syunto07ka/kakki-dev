@@ -10,6 +10,14 @@ export type Article = {
   title: string;
   date: string;
   description: React.FC;
+  tags?: Tag[];
+}
+
+export type Tag = {
+  name: string;
+  displayName: string;
+  labelColor: string;
+  letterColor: string;
 }
 
 export type Mode = 'white' | 'black';
