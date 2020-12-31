@@ -33,7 +33,7 @@ export const ArticlePage: React.FC = () => {
         {articleLoading && <div style={{textAlign: 'center', marginTop: '48px'}}>ローディング中</div>}
         {article && !articleLoading &&
           <ContentWrapper>
-            <ArticleWrapper title={article && article.id + '. ' + article.title}>
+            <ArticleWrapper article={article}>
               <div styleName="description-wrapper">
                 {Description && <Description />}
               </div>
