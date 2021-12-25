@@ -7,7 +7,7 @@ export const fetchArticle = (articleId: number) => (dispatch: Dispatch) => {
   dispatch(onLoading());
   const article: Article | undefined = articles.find(article => article.id === Number(articleId));
 
-  (new Promise(resolve => {
+  (new Promise<void>(resolve => {
     setTimeout(() => {
       dispatch(fetch({data: article}));
       resolve();

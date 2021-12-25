@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Articles } from 'containers/pages/Articles';
-import { Profile } from 'containers/pages/Profile';
+// import { Profile } from 'containers/pages/Profile';
 import { ArticlePage } from 'containers/pages/Article';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
@@ -22,7 +22,8 @@ const BaseRouter: React.FC = () => (
         <ArticlePage />
       </Route>
       <Route path="/profile">
-        <Profile />
+        <Redirect to="/" />
+        {/* <Profile /> */}
       </Route>
     </Switch>
   </Router>

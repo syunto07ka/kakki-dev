@@ -18,6 +18,21 @@
   display: inline-block;
 }
 
+.info-wrapper {
+  margin-top: 24px;
+}
+
+.date {
+  margin-top: 8px;
+
+  &::before {
+    content: "にちじ:";
+    display: inline-block;
+    width: 64px;
+    margin-right: 8px;
+  }
+}
+
 .content {
   margin-top: 32px;
 }

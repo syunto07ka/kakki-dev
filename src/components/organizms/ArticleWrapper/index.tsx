@@ -10,7 +10,7 @@ interface Props {
 export const ArticleWrapper: React.FC<Props> = ({ article, children }) => (
   <div styleName="wrapper">
     <div styleName="title-wrapper">
-      <div styleName="title">{article.id + '. ' + article.title}</div>
+      <div styleName="title">{article.title}</div>
       {article.tags && (
         <div styleName="tags">
           {article.tags && article.tags.map((tag: Tag) => (
@@ -20,6 +20,9 @@ export const ArticleWrapper: React.FC<Props> = ({ article, children }) => (
           ))}
         </div>
       )}
+      <div styleName="info-wrapper">
+        <div styleName="date">{article && article.date}</div>
+      </div>
     </div>
     <div styleName="content">{children}</div>
   </div>

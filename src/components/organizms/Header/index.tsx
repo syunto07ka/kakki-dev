@@ -10,7 +10,7 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ activeTab }) => (
   <div styleName="wrapper">
-    <Link styleName="title" to="/">kakki-dev</Link>
+    <Link styleName="title" to="/">かきおくんの時代劇</Link>
     <Navigation activeTab={activeTab}/>
   </div>
 );
