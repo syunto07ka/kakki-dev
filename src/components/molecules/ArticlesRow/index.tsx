@@ -13,7 +13,6 @@ export const ArticlesRow: React.FC<Props> = ({ article }) => (
   <div styleName="wrapper">
     <Link styleName="title" to={`/articles/${article.id}`}>{article.id}. {article.title}</Link>
     <div styleName="content-wrapper">
-      <div styleName="date">{article.date}</div>
       {article.tags && (
         <div styleName="tags">
           {article.tags.map((tag: Tag) => (
@@ -23,6 +22,7 @@ export const ArticlesRow: React.FC<Props> = ({ article }) => (
           ))}
         </div>
       )}
+      <div styleName="date">{article.date}</div>
     </div>
   </div>
 );

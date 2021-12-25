@@ -27,8 +27,8 @@ export const Articles: React.FC = () => {
       <MainTemplate>
         <Header activeTab={activeTab} />
         <ContentWrapper>
-          <SectionWrapper title="記事一覧">
-            {articlesLoading && <div style={{textAlign: 'center', marginTop: '48px'}}>ローディング中</div>}
+          <SectionWrapper title="いちらん">
+            {articlesLoading && <div style={{textAlign: 'center', marginTop: '48px'}}>ろーでぃんぐ中</div>}
             {!articlesLoading && articles.map((article: Article) => (
               <ArticlesRow article={article} key={String(article.id)} />
             ))}

@@ -20,11 +20,23 @@
   margin-top: 8px;
 
   &::before {
-    content: "created:";
+    content: "にちじ:";
     display: inline-block;
     width: 64px;
     margin-right: 8px;
   }
+}
+
+.twitter-button {
+  display: inline-block;
+  font-weight: bold;
+  background-color: #00acee;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 16px;
+  font-size: 13px;
 }
 
 .back-link {
